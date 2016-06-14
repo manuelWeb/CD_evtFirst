@@ -1,0 +1,106 @@
+// functions.scss
+/// Slightly lighten a color
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+$fontSerif: Georgia, "Times New Roman", Times, serif;
+$font-stack-arial: Arial, Helvetica, sans-serif;
+$bg-btn: #006737;
+$bg-btnCat: #C3B191;
+// surcharge styleV4.css add height 
+supp,#hpAnimCo {height: 465px;}
+// end surcharge
+h1,h2,h3,h4,h5 {margin:0;}
+
+#centralEvent {position:relative; width:964px; height:465px; margin:0;background: url(bg.jpg) no-repeat;}
+
+.btnCata {
+  float: right;
+  margin-top: 1px; margin-right: 10px;
+  line-height: 0;
+  text-align: center;
+  text-decoration: none;
+  &:hover img {
+    transform: rotate(8deg);
+  }
+  img {
+    margin-bottom: 5px;
+    transition: all 0.5s ease-in-out 0s;
+  }
+  .lab-cat {
+    display: block;
+    font: bold 16px $font-stack-arial;
+    text-transform: uppercase;
+    color: #177630;
+    +span {
+      display: inline-block;
+      padding: 5px 15px; margin-top: 0.3em;
+      cursor: pointer;
+      color: #390907;
+      border: medium none;
+      background-color: $bg-btnCat;
+      font: bold 14px Arial;
+      border: 1px solid #FFF;
+      border-radius: 10px;
+      transition: all 0.5s ease-in-out 0s;
+    }
+  }
+  &:hover span {
+    border: 1px solid $bg-btn;
+    color: $bg-btn;
+    background-color: tint($bg-btnCat, 50%);
+  }
+}
+.packContent {
+  margin: 0; padding: 0; list-style: none;
+  li {
+    position: absolute; top: 2px;// border: 1px solid red;
+    a {
+      float: left;
+      height: 100%; width: 100%;
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: all .7s ease-in-out 0s;
+      &:hover {
+        border: 1px solid tint($bg-btn, 50%);
+      }
+    }
+    .h3-like {
+      position: absolute; bottom: 29px; right: 0; left: 0;
+      font: bold 16px/124% Arial, sans-serif; color: #006637;
+      text-align: center;
+      sup {position: relative; top: -2px; left: 2px; font-size: 11px; vertical-align: top;}
+    }
+  }
+}
+.pck1 {left: 12px; width: 270px; height: 250px;}
+.pck2 {
+  left: 287px; width: 270px; height: 250px;
+  .pricePk {left: inherit; right: 0;}
+}
+.pck3 {left: 562px; width: 264px; height: 250px;}
+.pricePk {
+  position: absolute; top: 10px; right: 10px;
+  padding: 4px 16px;
+  font: bold 16px $font-stack-arial;
+  color: #FFF; text-align: center;
+  background-color: #006737;
+  box-shadow: 2px 2px 4px rgba(0,0,0,.45);
+}
+.btn-evt {
+	position:absolute; z-index:1; top:234px; left:112px; padding: 0 218px; height:34px;
+	font: bold 14px/30px $font-stack-arial; color: #FFFFFF; text-decoration: underline;
+}
+.btn-bg {
+	background-color: $bg-btn;
+  transition: all 1s ease-out;
+  box-shadow: 0 0 5px rgba(0,0,0,0.35);
+  &:after {
+    content: '';
+    position: absolute; bottom: 100%; left: 50%; width: 0; height: 0; margin-left: -10px;
+    border-width: 8px; border-style: solid; border-color: transparent transparent $bg-btn transparent;
+    transition: all 1s ease-out;
+  }
+  &:hover {background-color: #98CC0A;}
+  &:hover:after {border-color: transparent transparent #98CC0A transparent;}
+}

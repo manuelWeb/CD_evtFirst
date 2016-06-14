@@ -1,5 +1,6 @@
 ### todo
 - all done guy !!!
+- régler pb cheerio parse html replace &lt;br&gt; par &lt;br /&gt;
 
 ### sauvegarde sur clef usb
 - sur la clef
